@@ -50,7 +50,6 @@ public class MainView extends AppLayout {
         layout.add(new DrawerToggle());
         viewTitle = new H1();
         layout.add(viewTitle);
-        layout.add(new Image("images/user.svg", "Avatar"));
         return layout;
     }
 
@@ -64,7 +63,7 @@ public class MainView extends AppLayout {
         HorizontalLayout logoLayout = new HorizontalLayout();
         logoLayout.setId("logo");
         logoLayout.setAlignItems(FlexComponent.Alignment.CENTER);
-        logoLayout.add(new Image("images/logo.png", "IELTS Portal logo"));
+        logoLayout.add(new Image("images/logo.jpg", "IELTS Portal logo"));
         logoLayout.add(new H1("Portal"));
         layout.add(logoLayout, menu);
         return layout;

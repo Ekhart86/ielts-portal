@@ -6,10 +6,12 @@ public class ThemeItem {
     private String subTitle;
     private int id;
 
+
     public ThemeItem(String title, String subTitle, int id) {
         this.title = title;
         this.subTitle = subTitle;
         this.id = id;
+
     }
 
     public String getTitle() {
