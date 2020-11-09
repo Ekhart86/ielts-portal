@@ -19,6 +19,8 @@ import com.vaadin.flow.component.tabs.TabsVariant;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.server.PWA;
+import ru.ekhart86.views.rules.RulesView;
+import ru.ekhart86.views.tasks.TasksView;
 import ru.ekhart86.views.themes.ThemesView;
 import ru.ekhart86.views.vocabulary.VocabularyView;
 
@@ -82,6 +84,8 @@ public class MainView extends AppLayout {
         return new Tab[] {
             createTab("Темы", ThemesView.class),
             createTab("Словарь", VocabularyView.class),
+            createTab("Задания", TasksView.class),
+            createTab("Правила", RulesView.class),
         };
     }
 

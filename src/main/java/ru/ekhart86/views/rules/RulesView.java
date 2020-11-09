@@ -1,4 +1,4 @@
-package ru.ekhart86.views.vocabulary;
+package ru.ekhart86.views.rules;
 
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
@@ -10,32 +10,26 @@ import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import ru.ekhart86.views.main.MainView;
-import ru.ekhart86.views.themes.MyCityTheme;
 import ru.ekhart86.views.themes.ShopTheme;
-import ru.ekhart86.views.themes.ThemeItem;
 import ru.ekhart86.views.themes.VacationTheme;
 
 import java.util.Arrays;
 import java.util.List;
 
-@Route(value = "vocabulary", layout = MainView.class)
-@PageTitle("Словарь")
-@CssImport("./styles/views/vocabulary/vocabulary-view.css")
-public class VocabularyView extends Div {
-
-    int selectedThemeId;
-
-    public VocabularyView() {
-        setId("vocabulary-view");
-        List<ThemeItem> themesList = Arrays.asList(
-                new ThemeItem("Вступительные слова для IELTS", "Слова используемые в начале предложений", 1),
-                new ThemeItem("Погода", "Слова для описания погоды", 2),
-                new ThemeItem("Art", "Слова связанные с искусством", 3));
-        Grid<ThemeItem> grid = new Grid<>();
-        grid.setItems(themesList);
-        grid.addColumn(ThemeItem::getTitle).setHeader("Название");
-        grid.addColumn(ThemeItem::getSubTitle)
-                .setHeader("Описание");
+@Route(value = "rules", layout = MainView.class)
+@PageTitle("Правила")
+@CssImport("./styles/views/themes/themes-view.css")
+public class RulesView extends Div {
+    public RulesView() {
+        setId("rules-view");
+        List<RuleItem> tasksList = Arrays.asList(
+                new RuleItem("used to", "used to, would, be used to, get used to,", 1),
+                new RuleItem("Новое правило", "Для будущего правила", 2)
+        );
+        Grid<RuleItem> grid = new Grid<>();
+        grid.setItems(tasksList);
+        grid.addColumn(RuleItem::getTitle).setHeader("Название");
+        grid.addColumn(RuleItem::getSubTitle).setHeader("Описание");
         grid.addComponentColumn(
                 item -> {
                     Button openButton = new Button();
@@ -60,7 +54,7 @@ public class VocabularyView extends Div {
     private void openSelectedTheme(int id) {
         switch (id) {
             case 1:
-                UI.getCurrent().navigate(StartWordForIELTS.class);
+                UI.getCurrent().navigate(UsedToRule.class);
                 break;
             case 2:
                 UI.getCurrent().navigate(VacationTheme.class);
@@ -70,5 +64,4 @@ public class VocabularyView extends Div {
                 break;
         }
     }
-
 }

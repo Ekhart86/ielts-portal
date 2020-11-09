@@ -1,4 +1,4 @@
-package ru.ekhart86.views.vocabulary;
+package ru.ekhart86.views.tasks;
 
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
@@ -10,32 +10,24 @@ import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import ru.ekhart86.views.main.MainView;
-import ru.ekhart86.views.themes.MyCityTheme;
 import ru.ekhart86.views.themes.ShopTheme;
-import ru.ekhart86.views.themes.ThemeItem;
 import ru.ekhart86.views.themes.VacationTheme;
 
 import java.util.Arrays;
 import java.util.List;
 
-@Route(value = "vocabulary", layout = MainView.class)
-@PageTitle("Словарь")
-@CssImport("./styles/views/vocabulary/vocabulary-view.css")
-public class VocabularyView extends Div {
-
-    int selectedThemeId;
-
-    public VocabularyView() {
-        setId("vocabulary-view");
-        List<ThemeItem> themesList = Arrays.asList(
-                new ThemeItem("Вступительные слова для IELTS", "Слова используемые в начале предложений", 1),
-                new ThemeItem("Погода", "Слова для описания погоды", 2),
-                new ThemeItem("Art", "Слова связанные с искусством", 3));
-        Grid<ThemeItem> grid = new Grid<>();
-        grid.setItems(themesList);
-        grid.addColumn(ThemeItem::getTitle).setHeader("Название");
-        grid.addColumn(ThemeItem::getSubTitle)
-                .setHeader("Описание");
+@Route(value = "tasks", layout = MainView.class)
+@PageTitle("Задания")
+@CssImport("./styles/views/themes/themes-view.css")
+public class TasksView extends Div {
+    public TasksView() {
+        setId("tasks-view");
+        List<TaskItem> tasksList = Arrays.asList(
+                new TaskItem("Round-Up 4", "Практика. Уровень A2", 1));
+        Grid<TaskItem> grid = new Grid<>();
+        grid.setItems(tasksList);
+        grid.addColumn(TaskItem::getTitle).setHeader("Название");
+        grid.addColumn(TaskItem::getSubTitle).setHeader("Описание");
         grid.addComponentColumn(
                 item -> {
                     Button openButton = new Button();
@@ -60,7 +52,7 @@ public class VocabularyView extends Div {
     private void openSelectedTheme(int id) {
         switch (id) {
             case 1:
-                UI.getCurrent().navigate(StartWordForIELTS.class);
+                UI.getCurrent().navigate(RoundUPTask.class);
                 break;
             case 2:
                 UI.getCurrent().navigate(VacationTheme.class);
@@ -70,5 +62,4 @@ public class VocabularyView extends Div {
                 break;
         }
     }
-
 }
