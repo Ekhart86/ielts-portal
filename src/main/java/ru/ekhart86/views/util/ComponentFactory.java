@@ -87,8 +87,9 @@ public interface ComponentFactory {
     default Component createWordTable(List<WordItem> list) {
         Grid<WordItem> grid = new Grid<>();
         Style style = grid.getElement().getStyle();
-        style.set("margin-left", "15%");
-        style.set("margin-right", "15%");
+        style.set("margin-left", "5%");
+        style.set("margin-right", "5%");
+        style.set("height", "40em");
         ListDataProvider<WordItem> dataProvider = new ListDataProvider<>(list);
         grid.setDataProvider(dataProvider);
         Grid.Column<WordItem> englishNameColumn = grid

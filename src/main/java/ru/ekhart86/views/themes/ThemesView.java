@@ -25,8 +25,7 @@ public class ThemesView extends Div {
         setId("themes-view");
         List<ThemeItem> themesList = Arrays.asList(
                 new ThemeItem("Мой город", "Город в котором я родился", 1),
-                new ThemeItem("Отпуск", "История последнего отпуска", 2),
-                new ThemeItem("Магазин", "Правила похода в магазин", 3));
+                new ThemeItem("Петергоф", "Рассказ о посещении Петергофского парка", 2));
         Grid<ThemeItem> grid = new Grid<>();
         grid.setItems(themesList);
         grid.addColumn(ThemeItem::getTitle).setHeader("Название");
@@ -58,10 +57,7 @@ public class ThemesView extends Div {
                 UI.getCurrent().navigate(MyCityTheme.class);
                 break;
             case 2:
-                UI.getCurrent().navigate(VacationTheme.class);
-                break;
-            case 3:
-                UI.getCurrent().navigate(ShopTheme.class);
+                UI.getCurrent().navigate(MuseumTheme.class);
                 break;
         }
     }
