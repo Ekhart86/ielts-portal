@@ -29,8 +29,9 @@ public class VocabularyView extends Div {
         setId("vocabulary-view");
         List<ThemeItem> themesList = Arrays.asList(
                 new ThemeItem("Вступительные слова для IELTS", "Слова используемые в начале предложений", 1),
-                new ThemeItem("Погода", "Слова для описания погоды", 2),
-                new ThemeItem("Art", "Слова связанные с искусством", 3));
+                new ThemeItem("Прилагательные", "Список самых популярных прилагательных", 2),
+                new ThemeItem("Фразовые глаголы", "Список самых популярных фразовых глаголов", 3),
+                new ThemeItem("Идиомы", "Список популярных идиом", 4));
         Grid<ThemeItem> grid = new Grid<>();
         grid.setItems(themesList);
         grid.addColumn(ThemeItem::getTitle).setHeader("Название");
@@ -63,10 +64,13 @@ public class VocabularyView extends Div {
                 UI.getCurrent().navigate(StartWordForIELTS.class);
                 break;
             case 2:
-                UI.getCurrent().navigate(VacationTheme.class);
+                UI.getCurrent().navigate(Adjective.class);
                 break;
             case 3:
-                UI.getCurrent().navigate(ShopTheme.class);
+                UI.getCurrent().navigate(PhrasalVerbs.class);
+                break;
+            case 4:
+                UI.getCurrent().navigate(Idioms.class);
                 break;
         }
     }

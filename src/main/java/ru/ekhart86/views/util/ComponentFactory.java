@@ -16,6 +16,7 @@ import com.vaadin.flow.data.provider.ListDataProvider;
 import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.dom.Style;
 import org.apache.commons.lang3.StringUtils;
+import ru.ekhart86.views.vocabulary.PhrasalVerbItem;
 import ru.ekhart86.views.vocabulary.WordItem;
 
 import java.util.List;
@@ -131,4 +132,51 @@ public interface ComponentFactory {
         transcriptionNameField.setPlaceholder("Поиск по транскрипции");
         return grid;
     }
+
+    default Component createPhrasalVerbsTable(List<PhrasalVerbItem> list) {
+        Grid<PhrasalVerbItem> grid = new Grid<>();
+        Style style = grid.getElement().getStyle();
+        style.set("height", "40em");
+        ListDataProvider<PhrasalVerbItem> dataProvider = new ListDataProvider<>(list);
+        grid.setDataProvider(dataProvider);
+        Grid.Column<PhrasalVerbItem> englishNameColumn = grid
+                .addColumn(PhrasalVerbItem::getEnglishName).setHeader("English");
+        Grid.Column<PhrasalVerbItem> russianNameColumn = grid.addColumn(PhrasalVerbItem::getRussianName)
+                .setHeader("Russian");
+        Grid.Column<PhrasalVerbItem> exampleColumn = grid.addColumn(PhrasalVerbItem::getExample)
+                .setHeader("Example");
+        HeaderRow filterRow = grid.appendHeaderRow();
+
+        // English filter
+        TextField englishNameField = new TextField();
+        englishNameField.addValueChangeListener(event -> dataProvider.addFilter(
+                word -> StringUtils.containsIgnoreCase(word.getEnglishName(),
+                        englishNameField.getValue())));
+        englishNameField.setValueChangeMode(ValueChangeMode.EAGER);
+        filterRow.getCell(englishNameColumn).setComponent(englishNameField);
+        englishNameField.setSizeFull();
+        englishNameField.setPlaceholder("Поиск по английски");
+
+        // Russian filter
+        TextField russianNameField = new TextField();
+        russianNameField.addValueChangeListener(event -> dataProvider
+                .addFilter(word -> StringUtils.containsIgnoreCase(
+                        String.valueOf(word.getRussianName()), russianNameField.getValue())));
+        russianNameField.setValueChangeMode(ValueChangeMode.EAGER);
+        filterRow.getCell(russianNameColumn).setComponent(russianNameField);
+        russianNameField.setSizeFull();
+        russianNameField.setPlaceholder("Поиск по русски");
+
+        // Transcription filter
+        TextField exampleNameField = new TextField();
+        exampleNameField.addValueChangeListener(event -> dataProvider
+                .addFilter(word -> StringUtils.containsIgnoreCase(
+                        word.getExample(), exampleNameField.getValue())));
+        exampleNameField.setValueChangeMode(ValueChangeMode.EAGER);
+        filterRow.getCell(exampleColumn).setComponent(exampleNameField);
+        exampleNameField.setSizeFull();
+        exampleNameField.setPlaceholder("Поиск в примере");
+        return grid;
+    }
+
 }
