@@ -1,4 +1,4 @@
-package ru.ekhart86.views.vocabulary;
+package ru.ekhart86.views.b2wordlist;
 
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
@@ -11,25 +11,23 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import ru.ekhart86.views.main.MainView;
 import ru.ekhart86.views.themes.ThemeItem;
+import ru.ekhart86.views.vocabulary.*;
 
 import java.util.Arrays;
 import java.util.List;
 
-@Route(value = "vocabulary", layout = MainView.class)
-@PageTitle("Словарь")
+@Route(value = "b2-vocabulary", layout = MainView.class)
+@PageTitle("B2 Словарь")
 @CssImport("./styles/views/vocabulary/vocabulary-view.css")
-public class VocabularyView extends Div {
+public class B2WordListView extends Div {
 
     int selectedThemeId;
 
-    public VocabularyView() {
-        setId("vocabulary-view");
+    public B2WordListView() {
+        setId("b2-part-1-view");
         List<ThemeItem> themesList = Arrays.asList(
-                new ThemeItem("Вступительные слова для IELTS", "Слова используемые в начале предложений", 1),
-                new ThemeItem("Прилагательные", "Список самых популярных прилагательных", 2),
-                new ThemeItem("Фразовые глаголы", "Список самых популярных фразовых глаголов", 3),
-                new ThemeItem("Идиомы", "Список популярных идиом", 4),
-                new ThemeItem("Искусство", "Список слов об искусстве", 5));
+                new ThemeItem("Часть 1", "Список слов уровня B2", 1),
+                new ThemeItem("Часть 2", "Список слов уровня B2", 2));
         Grid<ThemeItem> grid = new Grid<>();
         grid.setItems(themesList);
         grid.addColumn(ThemeItem::getTitle).setHeader("Название");
@@ -59,7 +57,7 @@ public class VocabularyView extends Div {
     private void openSelectedTheme(int id) {
         switch (id) {
             case 1:
-                UI.getCurrent().navigate(StartWordForIELTS.class);
+                UI.getCurrent().navigate(B2PartOne.class);
                 break;
             case 2:
                 UI.getCurrent().navigate(Adjective.class);
