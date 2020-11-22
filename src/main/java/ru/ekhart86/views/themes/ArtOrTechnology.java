@@ -10,14 +10,14 @@ public class ArtOrTechnology  extends Div implements ComponentFactory {
     String imagePath = "images/art-or-technology.jpg";
     String imageAlt = "Фото искусства и науки";
     String topicName = "What is more important, science or art?";
-    String body = "Nowadays, life of people the easiest than 100 or 200 years ago. " +
+    String body = "Nowadays, life of people easier than 100 or 200 years ago. " +
             "It is possible thanks to incredible discoveries in science and technology. " +
-            "Many types of hard work today are performed by machines. " +
+            "Today, many types of hard work are performed by machines. " +
             "For humans appeared a lot of professions which require high intelligence. " +
             "A huge amount of information that people encounter every day often becomes cause mental problems. " +
             "People have a bad mood or even suffer from depression. " +
             "In my opinion, art helps people cope with these overloads. " +
-            "People go to music concerts, art galleries, theatres or just cinema and relax there. " +
+            "People go to music concerts, art galleries, theatres or cinema and relax there. " +
             "This fact let me claim that art no less important than science. " +
             "As it seems to me science and art should develop in parallel and they can't exist without each other.";
 
