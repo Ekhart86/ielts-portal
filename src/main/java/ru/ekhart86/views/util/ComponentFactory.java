@@ -17,6 +17,7 @@ import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.dom.Style;
 import org.apache.commons.lang3.StringUtils;
 import ru.ekhart86.views.vocabulary.PhrasalVerbItem;
+import ru.ekhart86.views.vocabulary.PrepositionItem;
 import ru.ekhart86.views.vocabulary.WordItem;
 
 import java.util.List;
@@ -179,4 +180,62 @@ public interface ComponentFactory {
         return grid;
     }
 
+    default Component createPrepositionTable(List<PrepositionItem> list) {
+        Grid<PrepositionItem> grid = new Grid<>();
+        grid.setColumnReorderingAllowed(true);
+        Style style = grid.getElement().getStyle();
+        style.set("height", "40em");
+        ListDataProvider<PrepositionItem> dataProvider = new ListDataProvider<>(list);
+        grid.setDataProvider(dataProvider);
+        Grid.Column<PrepositionItem> englishNameColumn = grid
+                .addColumn(PrepositionItem::getEnglishName).setHeader("English").setFlexGrow(1);
+        Grid.Column<PrepositionItem> russianNameColumn = grid.addColumn(PrepositionItem::getRussianName)
+                .setHeader("Russian").setFlexGrow(2);
+        Grid.Column<PrepositionItem> groupNameColumn = grid.addColumn(PrepositionItem::getGroup)
+                .setHeader("Group").setFlexGrow(1);
+        Grid.Column<PrepositionItem> exampleColumn = grid.addColumn(PrepositionItem::getExample)
+                .setHeader("Example").setFlexGrow(2);
+        HeaderRow filterRow = grid.appendHeaderRow();
+
+        // English filter
+        TextField englishNameField = new TextField();
+        englishNameField.addValueChangeListener(event -> dataProvider.addFilter(
+                word -> StringUtils.containsIgnoreCase(word.getEnglishName(),
+                        englishNameField.getValue())));
+        englishNameField.setValueChangeMode(ValueChangeMode.EAGER);
+        filterRow.getCell(englishNameColumn).setComponent(englishNameField);
+        englishNameField.setSizeFull();
+        englishNameField.setPlaceholder("Поиск по английски");
+
+        // Russian filter
+        TextField russianNameField = new TextField();
+        russianNameField.addValueChangeListener(event -> dataProvider
+                .addFilter(word -> StringUtils.containsIgnoreCase(
+                        String.valueOf(word.getRussianName()), russianNameField.getValue())));
+        russianNameField.setValueChangeMode(ValueChangeMode.EAGER);
+        filterRow.getCell(russianNameColumn).setComponent(russianNameField);
+        russianNameField.setSizeFull();
+        russianNameField.setPlaceholder("Поиск по русски");
+
+        // Group filter
+        TextField groupNameField = new TextField();
+        groupNameField.addValueChangeListener(event -> dataProvider
+                .addFilter(word -> StringUtils.containsIgnoreCase(
+                        String.valueOf(word.getGroup()), groupNameField.getValue())));
+        groupNameField.setValueChangeMode(ValueChangeMode.EAGER);
+        filterRow.getCell(groupNameColumn).setComponent(groupNameField);
+        groupNameField.setSizeFull();
+        groupNameField.setPlaceholder("Поиск по группе");
+
+        // Transcription filter
+        TextField exampleNameField = new TextField();
+        exampleNameField.addValueChangeListener(event -> dataProvider
+                .addFilter(word -> StringUtils.containsIgnoreCase(
+                        word.getExample(), exampleNameField.getValue())));
+        exampleNameField.setValueChangeMode(ValueChangeMode.EAGER);
+        filterRow.getCell(exampleColumn).setComponent(exampleNameField);
+        exampleNameField.setSizeFull();
+        exampleNameField.setPlaceholder("Поиск в примере");
+        return grid;
+    }
 }

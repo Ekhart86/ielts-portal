@@ -29,7 +29,8 @@ public class VocabularyView extends Div {
                 new ThemeItem("Прилагательные", "Список самых популярных прилагательных", 2),
                 new ThemeItem("Фразовые глаголы", "Список самых популярных фразовых глаголов", 3),
                 new ThemeItem("Идиомы", "Список популярных идиом", 4),
-                new ThemeItem("Искусство", "Список слов об искусстве", 5));
+                new ThemeItem("Искусство", "Список слов об искусстве", 5),
+                new ThemeItem("Предлоги", "Все предлоги в английском языке", 6));
         Grid<ThemeItem> grid = new Grid<>();
         grid.setItems(themesList);
         grid.addColumn(ThemeItem::getTitle).setHeader("Название");
@@ -73,6 +74,10 @@ public class VocabularyView extends Div {
             case 5:
                 UI.getCurrent().navigate(Art.class);
                 break;
+            case 6:
+                UI.getCurrent().navigate(Prepositions.class);
+                break;
+
         }
     }
 
