@@ -63,7 +63,10 @@ public interface ComponentFactory {
         centeredLayout.setSizeFull();
         centeredLayout.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
         centeredLayout.setAlignItems(FlexComponent.Alignment.CENTER);
-        centeredLayout.add(new Image(path, alt));
+        Image image = new Image(path, alt);
+        image.setMaxHeight("640px");
+        image.setMaxWidth("480px");
+        centeredLayout.add(image);
         return centeredLayout;
     }
 
@@ -71,8 +74,8 @@ public interface ComponentFactory {
         H3 body = new H3(text);
         Style style = body.getElement().getStyle();
         style.set("margin-top", "3%");
-        style.set("margin-left", "30%");
-        style.set("margin-right", "30%");
+        style.set("margin-left", "20%");
+        style.set("margin-right", "20%");
         return body;
     }
 

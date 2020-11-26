@@ -28,7 +28,8 @@ public class ThemesView extends Div {
                 new ThemeItem("Петергоф", "Рассказ о посещении Петергофского парка", 2),
                 new ThemeItem("Книга", "Рассказ о последней прочитанной книге", 3),
                 new ThemeItem("Искусство или наука", "Рассуждение о том что важней", 4),
-                new ThemeItem("Музыка рассуждение", "Рассуждение о том вытеснит ли современная музыка традиционную", 5));
+                new ThemeItem("Рассуждение о музыке", "Рассуждение о том вытеснит ли современная музыка традиционную", 5),
+                new ThemeItem("Шопинг", "Монолог на тему шопинга", 6));
         Grid<ThemeItem> grid = new Grid<>();
         grid.setItems(themesList);
         grid.addColumn(ThemeItem::getTitle).setHeader("Название");
@@ -70,6 +71,9 @@ public class ThemesView extends Div {
                 break;
             case 5:
                 UI.getCurrent().navigate(MusicTraditionalOrModern.class);
+                break;
+            case 6:
+                UI.getCurrent().navigate(ShopTheme.class);
                 break;
         }
     }
