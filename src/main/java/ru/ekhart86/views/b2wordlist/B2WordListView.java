@@ -60,7 +60,7 @@ public class B2WordListView extends Div {
                 UI.getCurrent().navigate(B2PartOne.class);
                 break;
             case 2:
-                UI.getCurrent().navigate(Adjective.class);
+                UI.getCurrent().navigate(B2PartTwo.class);
                 break;
             case 3:
                 UI.getCurrent().navigate(PhrasalVerbs.class);

@@ -7,6 +7,7 @@ import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.dom.Style;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import ru.ekhart86.views.main.MainView;
@@ -32,6 +33,8 @@ public class VocabularyView extends Div {
                 new ThemeItem("Искусство", "Список слов об искусстве", 5),
                 new ThemeItem("Предлоги", "Все предлоги в английском языке", 6));
         Grid<ThemeItem> grid = new Grid<>();
+        Style style = grid.getElement().getStyle();
+        style.set("height", "40em");
         grid.setItems(themesList);
         grid.addColumn(ThemeItem::getTitle).setHeader("Название");
         grid.addColumn(ThemeItem::getSubTitle)

@@ -7,6 +7,7 @@ import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.dom.Style;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
@@ -29,8 +30,12 @@ public class ThemesView extends Div {
                 new ThemeItem("Книга", "Рассказ о последней прочитанной книге", 3),
                 new ThemeItem("Искусство или наука", "Рассуждение о том что важней", 4),
                 new ThemeItem("Рассуждение о музыке", "Рассуждение о том вытеснит ли современная музыка традиционную", 5),
-                new ThemeItem("Шопинг", "Монолог на тему шопинга", 6));
+                new ThemeItem("Шопинг", "Монолог на тему шопинга", 6),
+                new ThemeItem("Русский музей", "Рассказ о русском музее", 7),
+                new ThemeItem("Спорт", "Моё отношение к спорту", 8));
         Grid<ThemeItem> grid = new Grid<>();
+        Style style = grid.getElement().getStyle();
+        style.set("height", "40em");
         grid.setItems(themesList);
         grid.addColumn(ThemeItem::getTitle).setHeader("Название");
         grid.addColumn(ThemeItem::getSubTitle).setHeader("Описание");
@@ -75,6 +80,13 @@ public class ThemesView extends Div {
             case 6:
                 UI.getCurrent().navigate(ShopTheme.class);
                 break;
+            case 7:
+                UI.getCurrent().navigate(RussianMuseumTheme.class);
+                break;
+            case 8:
+                UI.getCurrent().navigate(SportTheme.class);
+                break;
+
         }
     }
 }
