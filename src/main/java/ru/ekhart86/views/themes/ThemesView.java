@@ -32,7 +32,8 @@ public class ThemesView extends Div {
                 new ThemeItem("Рассуждение о музыке", "Рассуждение о том вытеснит ли современная музыка традиционную", 5),
                 new ThemeItem("Шопинг", "Монолог на тему шопинга", 6),
                 new ThemeItem("Русский музей", "Рассказ о русском музее", 7),
-                new ThemeItem("Спорт", "Моё отношение к спорту", 8));
+                new ThemeItem("Спорт", "Моё отношение к спорту", 8),
+                new ThemeItem("Письмо другу", "Письмо другу о продаже мебели", 9));
         Grid<ThemeItem> grid = new Grid<>();
         Style style = grid.getElement().getStyle();
         style.set("height", "40em");
@@ -86,7 +87,9 @@ public class ThemesView extends Div {
             case 8:
                 UI.getCurrent().navigate(SportTheme.class);
                 break;
-
+            case 9:
+                UI.getCurrent().navigate(LetterAboutFurniture.class);
+                break;
         }
     }
 }

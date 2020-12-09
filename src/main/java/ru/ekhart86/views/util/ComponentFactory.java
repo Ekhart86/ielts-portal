@@ -58,6 +58,15 @@ public interface ComponentFactory {
         return centeredLayout;
     }
 
+    default Component createH3Header(String text) {
+        FlexLayout centeredLayout = new FlexLayout();
+        centeredLayout.setSizeFull();
+        centeredLayout.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
+        centeredLayout.setAlignItems(FlexComponent.Alignment.CENTER);
+        centeredLayout.add(new H3(text));
+        return centeredLayout;
+    }
+
     default Component createImage(String path, String alt) {
         FlexLayout centeredLayout = new FlexLayout();
         centeredLayout.setSizeFull();
