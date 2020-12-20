@@ -15,7 +15,7 @@ public class B2PartTwo extends Div implements ComponentFactory {
     public B2PartTwo() {
         add(createHeaderContentBackToThemes("b2-vocabulary"));
         VerticalLayout verticalLayout = new VerticalLayout();
-        verticalLayout.addAndExpand(createH2Header("B2 Часть 2"));
+        verticalLayout.addAndExpand(createH3Header("B2 Часть 2"));
         List<WordItem> wordsList = new ArrayList<>();
         wordsList.add(new WordItem("cord", "верёвка, шнур", "[kɔːd]"));
         wordsList.add(new WordItem("vision", "зрение или видение", "[ˈvɪʒən]"));
@@ -209,7 +209,7 @@ public class B2PartTwo extends Div implements ComponentFactory {
         wordsList.add(new WordItem("ticket", "билет, талон", "[ˈtɪkɪt]"));
         wordsList.add(new WordItem("bet", "ставка, держать пари", "[bɛt]"));
         wordsList.add(new WordItem("settle", "уладить, селиться", "[ˈsɛtl]"));
-        wordsList.add(new WordItem("unsettle", "расстраивать", "[baʊ]"));
+        wordsList.add(new WordItem("unsettle", "расстраивать", "[ʌnˈsetl]"));
         wordsList.add(new WordItem("flow", "поток, течь", "[fləʊ]"));
         wordsList.add(new WordItem("approve", "утвердить, одобрить ", "[əˈpruːv]"));
         wordsList.add(new WordItem("approval", "утверждение", "[əˈpruːvəl]"));

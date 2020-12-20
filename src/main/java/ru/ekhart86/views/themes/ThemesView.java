@@ -33,7 +33,10 @@ public class ThemesView extends Div {
                 new ThemeItem("Шопинг", "Монолог на тему шопинга", 6),
                 new ThemeItem("Русский музей", "Рассказ о русском музее", 7),
                 new ThemeItem("Спорт", "Моё отношение к спорту", 8),
-                new ThemeItem("Письмо другу", "Письмо другу о продаже мебели", 9));
+                new ThemeItem("Письмо другу", "Письмо другу о продаже мебели", 9),
+                new ThemeItem("Луковое эссе", "Эссе о плюсах и минусах лука", 10),
+                new ThemeItem("Солнечная система", "Рассказ о солнечной системе", 11),
+                new ThemeItem("Письмо в Apple", "Письмо о вакансии в Apple", 12));
         Grid<ThemeItem> grid = new Grid<>();
         Style style = grid.getElement().getStyle();
         style.set("height", "40em");
@@ -90,6 +93,16 @@ public class ThemesView extends Div {
             case 9:
                 UI.getCurrent().navigate(LetterAboutFurniture.class);
                 break;
+            case 10:
+                UI.getCurrent().navigate(OnionEssayTheme.class);
+                break;
+            case 11:
+                UI.getCurrent().navigate(SolarSystemTheme.class);
+                break;
+            case 12:
+                UI.getCurrent().navigate(LetterForApple.class);
+                break;
+
         }
     }
 }

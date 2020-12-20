@@ -14,7 +14,7 @@ public class B2PartOne  extends Div implements ComponentFactory {
     public B2PartOne() {
         add(createHeaderContentBackToThemes("b2-vocabulary"));
         VerticalLayout verticalLayout = new VerticalLayout();
-        verticalLayout.addAndExpand(createH2Header("B2 Часть 1"));
+        verticalLayout.addAndExpand(createH3Header("B2 Часть 1"));
         List<WordItem> wordsList = new ArrayList<>();
         wordsList.add(new WordItem("arouse", "вызывать, пробуждать", "[əˈraʊz]"));
         wordsList.add(new WordItem("pretty", "довольно-таки", "[ˈprɪti]"));

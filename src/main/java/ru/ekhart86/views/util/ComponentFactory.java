@@ -79,8 +79,18 @@ public interface ComponentFactory {
         return centeredLayout;
     }
 
+    default Component createImageWithoutRestrictions(String path, String alt) {
+        FlexLayout centeredLayout = new FlexLayout();
+        centeredLayout.setSizeFull();
+        centeredLayout.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
+        centeredLayout.setAlignItems(FlexComponent.Alignment.CENTER);
+        Image image = new Image(path, alt);
+        centeredLayout.add(image);
+        return centeredLayout;
+    }
+
     default Component createBody(String text) {
-        H3 body = new H3(text);
+        H4 body = new H4(text);
         Style style = body.getElement().getStyle();
         style.set("margin-top", "3%");
         style.set("margin-left", "20%");
@@ -89,7 +99,7 @@ public interface ComponentFactory {
     }
 
     default Component createBodyWithColor(String text, String color) {
-        H3 body = new H3(text);
+        H4 body = new H4(text);
         Style style = body.getElement().getStyle();
         style.set("margin-top", "3%");
         style.set("margin-left", "30%");
