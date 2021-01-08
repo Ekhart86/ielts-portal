@@ -25,7 +25,8 @@ public class RulesView extends Div {
         List<RuleItem> tasksList = Arrays.asList(
                 new RuleItem("Конструкция used to", "used to, would, be used to, get used to,", 1),
                 new RuleItem("Пассивный залог", "Правила пассивного залога", 2),
-                new RuleItem("Условные предложения", "Правила условных предложений", 3)
+                new RuleItem("Условные предложения", "Правила условных предложений", 3),
+                new RuleItem("Шаблон ответа", "Spiking шаблон", 4)
         );
         Grid<RuleItem> grid = new Grid<>();
         grid.setItems(tasksList);
@@ -62,6 +63,9 @@ public class RulesView extends Div {
                 break;
             case 3:
                 UI.getCurrent().navigate(Conditionals.class);
+                break;
+            case 4:
+                UI.getCurrent().navigate(PatternForAnswer.class);
                 break;
         }
     }
