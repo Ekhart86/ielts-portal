@@ -17,6 +17,7 @@ import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.dom.Style;
 import org.apache.commons.lang3.StringUtils;
 import ru.ekhart86.views.vocabulary.PhrasalVerbItem;
+import ru.ekhart86.views.vocabulary.PhraseItem;
 import ru.ekhart86.views.vocabulary.PrepositionItem;
 import ru.ekhart86.views.vocabulary.WordItem;
 
@@ -199,6 +200,40 @@ public interface ComponentFactory {
         filterRow.getCell(exampleColumn).setComponent(exampleNameField);
         exampleNameField.setSizeFull();
         exampleNameField.setPlaceholder("Поиск в примере");
+        return grid;
+    }
+
+    default Component createPhraseTable(List<PhraseItem> list) {
+        Grid<PhraseItem> grid = new Grid<>();
+        Style style = grid.getElement().getStyle();
+        style.set("height", "40em");
+        ListDataProvider<PhraseItem> dataProvider = new ListDataProvider<>(list);
+        grid.setDataProvider(dataProvider);
+        Grid.Column<PhraseItem> englishNameColumn = grid
+                .addColumn(PhraseItem::getEnglishName).setHeader("English");
+        Grid.Column<PhraseItem> russianNameColumn = grid.addColumn(PhraseItem::getRussianName)
+                .setHeader("Russian");
+        HeaderRow filterRow = grid.appendHeaderRow();
+
+        // English filter
+        TextField englishNameField = new TextField();
+        englishNameField.addValueChangeListener(event -> dataProvider.addFilter(
+                word -> StringUtils.containsIgnoreCase(word.getEnglishName(),
+                        englishNameField.getValue())));
+        englishNameField.setValueChangeMode(ValueChangeMode.EAGER);
+        filterRow.getCell(englishNameColumn).setComponent(englishNameField);
+        englishNameField.setSizeFull();
+        englishNameField.setPlaceholder("Поиск по английски");
+
+        // Russian filter
+        TextField russianNameField = new TextField();
+        russianNameField.addValueChangeListener(event -> dataProvider
+                .addFilter(word -> StringUtils.containsIgnoreCase(
+                        String.valueOf(word.getRussianName()), russianNameField.getValue())));
+        russianNameField.setValueChangeMode(ValueChangeMode.EAGER);
+        filterRow.getCell(russianNameColumn).setComponent(russianNameField);
+        russianNameField.setSizeFull();
+        russianNameField.setPlaceholder("Поиск по русски");
         return grid;
     }
 

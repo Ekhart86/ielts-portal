@@ -26,7 +26,7 @@ public class RulesView extends Div {
                 new RuleItem("Конструкция used to", "used to, would, be used to, get used to,", 1),
                 new RuleItem("Пассивный залог", "Правила пассивного залога", 2),
                 new RuleItem("Условные предложения", "Правила условных предложений", 3),
-                new RuleItem("Шаблон ответа", "Spiking шаблон", 4)
+                new RuleItem("Шаблон ответа", "Speaking шаблон", 4)
         );
         Grid<RuleItem> grid = new Grid<>();
         grid.setItems(tasksList);
