@@ -36,7 +36,9 @@ public class ThemesView extends Div {
                 new ThemeItem("Письмо другу", "Письмо другу о продаже мебели", 9),
                 new ThemeItem("Луковое эссе", "Эссе о плюсах и минусах лука", 10),
                 new ThemeItem("Солнечная система", "Рассказ о солнечной системе", 11),
-                new ThemeItem("Письмо в Apple", "Письмо о вакансии в Apple", 12));
+                new ThemeItem("Письмо в Apple", "Письмо о вакансии в Apple", 12),
+                new ThemeItem("Письмо жалоба", "Письмо о потеряном чемодане", 13),
+                new ThemeItem("Письмо в кадровое агенство", "Вакансия водитель грузовика", 14));
         Grid<ThemeItem> grid = new Grid<>();
         Style style = grid.getElement().getStyle();
         style.set("height", "40em");
@@ -102,7 +104,12 @@ public class ThemesView extends Div {
             case 12:
                 UI.getCurrent().navigate(LetterForApple.class);
                 break;
-
+            case 13:
+                UI.getCurrent().navigate(LetterOfComplaint.class);
+                break;
+            case 14:
+                UI.getCurrent().navigate(TruckDriverLetter.class);
+                break;
         }
     }
 }
