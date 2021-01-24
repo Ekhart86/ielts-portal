@@ -25,7 +25,8 @@ public class TasksView extends Div {
         List<TaskItem> tasksList = Arrays.asList(
                 new TaskItem("Round-Up 4", "Практика. Уровень A2", 1),
                 new TaskItem("Test 3 Reading", "Практика. Тест третий", 2),
-                new TaskItem("Test 4 Reading", "Практика. Тест четвёртый", 3));
+                new TaskItem("Test 4 Reading", "Практика. Тест четвёртый", 3),
+                new TaskItem("Common mistakes", "Тест первый", 4));
         Grid<TaskItem> grid = new Grid<>();
         grid.setItems(tasksList);
         grid.addColumn(TaskItem::getTitle).setHeader("Название");
@@ -62,6 +63,10 @@ public class TasksView extends Div {
             case 3:
                 UI.getCurrent().navigate(TestFourReading.class);
                 break;
+            case 4:
+                UI.getCurrent().navigate(CommonMistakesTest1.class);
+                break;
         }
+
     }
 }
