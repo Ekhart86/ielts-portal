@@ -2,6 +2,7 @@
 For build:
 
 mvn clean package -Pproduction
+ssh ekhart86@ip -i privatekey.pem
 
 For run:
 

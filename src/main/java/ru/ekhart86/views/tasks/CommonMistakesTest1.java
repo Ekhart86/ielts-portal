@@ -13,6 +13,12 @@ public class CommonMistakesTest1 extends Div implements ComponentFactory {
         VerticalLayout verticalLayout = new VerticalLayout();
         verticalLayout.addAndExpand(createImage("images/commontest1/common-test-1.png", "Page 1"));
         verticalLayout.addAndExpand(createImage("images/commontest1/common-test-2.png", "Page 2"));
+        verticalLayout.addAndExpand(createImage("images/commontest1/common-4.png", "Page 1"));
+        verticalLayout.addAndExpand(createImage("images/commontest1/common-5.png", "Page 2"));
+        verticalLayout.addAndExpand(createImage("images/commontest1/common-6-1.png", "Page 2"));
+        verticalLayout.addAndExpand(createImage("images/commontest1/common-6-2.png", "Page 2"));
+        verticalLayout.addAndExpand(createImage("images/commontest1/common-6-3.png", "Page 2"));
+        verticalLayout.addAndExpand(createImage("images/commontest1/common-7-1.png", "Page 2"));
         add(verticalLayout);
     }
 }

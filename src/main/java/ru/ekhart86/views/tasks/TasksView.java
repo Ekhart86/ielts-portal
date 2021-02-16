@@ -26,7 +26,7 @@ public class TasksView extends Div {
                 new TaskItem("Round-Up 4", "Практика. Уровень A2", 1),
                 new TaskItem("Test 3 Reading", "Практика. Тест третий", 2),
                 new TaskItem("Test 4 Reading", "Практика. Тест четвёртый", 3),
-                new TaskItem("Common mistakes", "Тест первый", 4));
+                new TaskItem("Common mistakes", "Весь учебник", 4));
         Grid<TaskItem> grid = new Grid<>();
         grid.setItems(tasksList);
         grid.addColumn(TaskItem::getTitle).setHeader("Название");
