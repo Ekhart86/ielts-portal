@@ -25,7 +25,7 @@ public class MusicTraditionalOrModern  extends Div implements ComponentFactory {
             "Adult people more often prefer to listen traditional kind of music because they able understand it and enjoy it.";
 
     public MusicTraditionalOrModern() {
-        add(createHeaderContentBackToThemes("themes"));
+        add(createHeaderContentBackToThemes("themes", topicName));
         VerticalLayout verticalLayout = new VerticalLayout();
         verticalLayout.addAndExpand(createH2Header(topicName));
         verticalLayout.addAndExpand(createImage(imagePath, imageAlt));

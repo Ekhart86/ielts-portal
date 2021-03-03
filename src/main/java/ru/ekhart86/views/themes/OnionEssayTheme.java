@@ -29,7 +29,7 @@ public class OnionEssayTheme extends Div implements ComponentFactory {
             "I tend to think that onions continue to be a favorite vegetable for millions of people around the world.";
 
     public OnionEssayTheme() {
-        add(createHeaderContentBackToThemes("themes"));
+        add(createHeaderContentBackToThemes("themes", topicName));
         VerticalLayout verticalLayout = new VerticalLayout();
         verticalLayout.addAndExpand(createH3Header(topicName));
         verticalLayout.addAndExpand(createImage(imagePath, imageAlt));

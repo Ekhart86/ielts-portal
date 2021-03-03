@@ -9,7 +9,7 @@ import ru.ekhart86.views.util.ComponentFactory;
 public class RoundUPTask extends Div implements ComponentFactory {
 
     public RoundUPTask() {
-        add(createHeaderContentBackToThemes("tasks"));
+        add(createHeaderContentBackToThemes("tasks", ""));
         VerticalLayout verticalLayout = new VerticalLayout();
         verticalLayout.addAndExpand(createImage("images/roundup4/roundup4-1.PNG", "Page 1"));
         verticalLayout.addAndExpand(createImage("images/roundup4/roundup4-2.PNG", "Page 2"));

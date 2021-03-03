@@ -21,7 +21,7 @@ public class RussianMuseumTheme extends Div implements ComponentFactory {
             "Karl Brullov’s The Last Day of Pompeii, Vasily Surikov's Suvorov Crossing the Alps in 1799.\n" +
             "Today the State Russian Museum is a large research and educational centre.";
     public RussianMuseumTheme() {
-        add(createHeaderContentBackToThemes("themes"));
+        add(createHeaderContentBackToThemes("themes", topicName));
         VerticalLayout verticalLayout = new VerticalLayout();
         verticalLayout.addAndExpand(createH2Header(topicName));
         verticalLayout.addAndExpand(createImage(imagePath, imageAlt));

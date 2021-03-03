@@ -26,17 +26,25 @@ import java.util.List;
 
 public interface ComponentFactory {
 
-    default Component createHeaderContentBackToThemes(String backPage) {
+    default Component createHeaderContentBackToThemes(String backPage, String pageName) {
         HorizontalLayout layout = new HorizontalLayout();
         layout.setId("header");
         layout.getThemeList().set("dark", true);
         layout.setWidthFull();
-        layout.setSpacing(false);
+        layout.setSpacing(true);
+        layout.setMaxWidth("50");
         layout.setAlignItems(FlexComponent.Alignment.CENTER);
+        layout.setDefaultVerticalComponentAlignment(FlexComponent.Alignment.CENTER);
         Button backButton = new Button();
         Icon icon = new Icon(VaadinIcon.ARROW_LEFT);
         Label label = new Label("  ");
         Text text = new Text("назад");
+        StringBuilder space = new StringBuilder();
+        for (int i = 0; i < 50; i++) {
+            space.append(" ");
+        }
+        Label labelToCenter = new Label(space.toString());
+        Text name = new Text(pageName);
         backButton.getElement().appendChild(icon.getElement());
         backButton.getElement().appendChild(label.getElement());
         backButton.getElement().appendChild(text.getElement());
@@ -45,6 +53,8 @@ public interface ComponentFactory {
                         ui.navigate(backPage))
         );
         layout.add(backButton);
+        layout.add(labelToCenter);
+        layout.add(name);
         H1 viewTitle = new H1();
         layout.add(viewTitle);
         return layout;

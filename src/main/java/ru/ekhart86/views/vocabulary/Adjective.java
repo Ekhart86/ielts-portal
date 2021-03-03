@@ -10,9 +10,8 @@ import java.util.List;
 @Route("adjective")
 public class Adjective extends Div implements ComponentFactory {
     public Adjective() {
-        add(createHeaderContentBackToThemes("vocabulary"));
+        add(createHeaderContentBackToThemes("vocabulary", "Прилагательные"));
         VerticalLayout verticalLayout = new VerticalLayout();
-        verticalLayout.addAndExpand(createH2Header("Прилагательные"));
         List<WordItem> wordsList = new ArrayList<>();
         wordsList.add(new WordItem("particular", "особый, отдельный", "[pəˈtɪkjʊlə]"));
         wordsList.add(new WordItem("same", "одинаковый", "[seim]"));

@@ -13,9 +13,8 @@ import java.util.List;
 public class B2PartTwo extends Div implements ComponentFactory {
 
     public B2PartTwo() {
-        add(createHeaderContentBackToThemes("b2-vocabulary"));
+        add(createHeaderContentBackToThemes("b2-vocabulary","B2 Часть 2"));
         VerticalLayout verticalLayout = new VerticalLayout();
-        verticalLayout.addAndExpand(createH3Header("B2 Часть 2"));
         List<WordItem> wordsList = new ArrayList<>();
         wordsList.add(new WordItem("cord", "верёвка, шнур", "[kɔːd]"));
         wordsList.add(new WordItem("vision", "зрение или видение", "[ˈvɪʒən]"));

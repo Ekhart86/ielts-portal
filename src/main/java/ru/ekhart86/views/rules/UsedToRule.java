@@ -8,7 +8,7 @@ import ru.ekhart86.views.util.ComponentFactory;
 @Route("used-to")
 public class UsedToRule extends Div implements ComponentFactory {
     public UsedToRule() {
-        add(createHeaderContentBackToThemes("rules"));
+        add(createHeaderContentBackToThemes("rules", ""));
         VerticalLayout verticalLayout = new VerticalLayout();
         verticalLayout.addAndExpand(createH2Header("used to"));
         verticalLayout.addAndExpand(createBody("Конструкция used to используется для выражения повторяющихся действий в прошлом. " +

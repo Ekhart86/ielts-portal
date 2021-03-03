@@ -12,9 +12,8 @@ import java.util.List;
 public class Idioms extends Div implements ComponentFactory {
 
     public Idioms() {
-        add(createHeaderContentBackToThemes("vocabulary"));
+        add(createHeaderContentBackToThemes("vocabulary","Идиомы"));
         VerticalLayout verticalLayout = new VerticalLayout();
-        verticalLayout.addAndExpand(createH2Header("Идиомы"));
         List<WordItem> wordsList = new ArrayList<>();
         wordsList.add(new WordItem("in the long run", "В долгосрочной перспективе", "[ɪn ðiː lɒŋ rʌn]"));
         wordsList.add(new WordItem("have mixed feelings about", "Испытываю смешанные чувства по поводу", "[hæv mɪkst ˈfiːlɪŋz əˈbaʊt]"));

@@ -7,7 +7,7 @@ import ru.ekhart86.views.util.ComponentFactory;
 @Route("conditionals")
 public class Conditionals extends Div implements ComponentFactory {
     public Conditionals() {
-        add(createHeaderContentBackToThemes("rules"));
+        add(createHeaderContentBackToThemes("rules", ""));
         VerticalLayout verticalLayout = new VerticalLayout();
         verticalLayout.addAndExpand(createH2Header("Conditionals"));
         verticalLayout.addAndExpand(createImage("images/conditionals/conditionals.jpg", "conditionals"));

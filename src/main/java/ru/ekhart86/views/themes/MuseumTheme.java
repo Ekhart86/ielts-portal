@@ -29,7 +29,7 @@ public class MuseumTheme extends Div implements ComponentFactory {
             "be sure to visit this place.";
 
     public MuseumTheme() {
-        add(createHeaderContentBackToThemes("themes"));
+        add(createHeaderContentBackToThemes("themes", imageAlt));
         VerticalLayout verticalLayout = new VerticalLayout();
         verticalLayout.addAndExpand(createH2Header(topicName));
         verticalLayout.addAndExpand(createImage(imagePath, imageAlt));

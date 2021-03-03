@@ -11,9 +11,8 @@ import java.util.List;
 public class PhrasalVerbs extends Div implements ComponentFactory {
 
     public PhrasalVerbs() {
-        add(createHeaderContentBackToThemes("vocabulary"));
+        add(createHeaderContentBackToThemes("vocabulary", "Фразовые глаголы"));
         VerticalLayout verticalLayout = new VerticalLayout();
-        verticalLayout.addAndExpand(createH2Header("Фразовые глаголы"));
         List<PhrasalVerbItem> wordsList = new ArrayList<>();
         wordsList.add(new PhrasalVerbItem("act on", "влиять, действовать на", "He acts on my nerves"));
         wordsList.add(new PhrasalVerbItem("act out", "притворяться, изображать", "There were acting out the story of their acquaintance"));

@@ -8,7 +8,7 @@ import ru.ekhart86.views.util.ComponentFactory;
 public class PassiveVoice extends Div implements ComponentFactory {
 
     public PassiveVoice() {
-        add(createHeaderContentBackToThemes("rules"));
+        add(createHeaderContentBackToThemes("rules", ""));
         VerticalLayout verticalLayout = new VerticalLayout();
         verticalLayout.addAndExpand(createH2Header("Passive voice"));
         verticalLayout.addAndExpand(createImage("images/passive-voice/passive_voice-01.jpg", "passive voice 1"));

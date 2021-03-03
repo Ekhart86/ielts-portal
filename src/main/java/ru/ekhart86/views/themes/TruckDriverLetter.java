@@ -18,7 +18,7 @@ public class TruckDriverLetter extends Div implements ComponentFactory {
     String buyWords = "Yours faithfully, Roman Morozov";
 
     public TruckDriverLetter() {
-        add(createHeaderContentBackToThemes("themes"));
+        add(createHeaderContentBackToThemes("themes", topicName));
         VerticalLayout verticalLayout = new VerticalLayout();
         verticalLayout.addAndExpand(createH3Header(topicName));
         verticalLayout.addAndExpand(createImage(imagePath, imageAlt));

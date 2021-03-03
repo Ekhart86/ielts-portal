@@ -23,7 +23,7 @@ public class SolarSystemTheme extends Div implements ComponentFactory {
     String body9 = "Pluto is the farthest planet from the Sun. The mean distance from the Sun is nearly 6 billion kilometres. Pluto is smal-s ler than the Moon. It is the only planet that has not been visited by a spacecraft. It has the only one known moon Charon.";
 
     public SolarSystemTheme() {
-        add(createHeaderContentBackToThemes("themes"));
+        add(createHeaderContentBackToThemes("themes", topicName));
         VerticalLayout verticalLayout = new VerticalLayout();
         verticalLayout.addAndExpand(createH3Header(topicName));
         verticalLayout.addAndExpand(createImage(imagePath, imageAlt));

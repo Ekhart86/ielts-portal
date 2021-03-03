@@ -9,7 +9,7 @@ import ru.ekhart86.views.util.ComponentFactory;
 public class TestThreeReading extends Div implements ComponentFactory {
 
     public TestThreeReading() {
-        add(createHeaderContentBackToThemes("tasks"));
+        add(createHeaderContentBackToThemes("tasks", ""));
         VerticalLayout verticalLayout = new VerticalLayout();
         verticalLayout.addAndExpand(createImage("images/test-3-reading/test-3-reading-1.PNG", "Page 1"));
         verticalLayout.addAndExpand(createImage("images/test-3-reading/test-3-reading-2.PNG", "Page 2"));

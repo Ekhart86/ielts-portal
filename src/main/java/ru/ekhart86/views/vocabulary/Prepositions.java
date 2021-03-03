@@ -11,9 +11,8 @@ import java.util.List;
 public class Prepositions extends Div implements ComponentFactory {
 
     public Prepositions() {
-        add(createHeaderContentBackToThemes("vocabulary"));
+        add(createHeaderContentBackToThemes("vocabulary", "Предлоги"));
         VerticalLayout verticalLayout = new VerticalLayout();
-        verticalLayout.addAndExpand(createH2Header("Предлоги"));
         List<PrepositionItem> wordsList = new ArrayList<>();
         wordsList.add(new PrepositionItem("Above", "над, выше", "Предлоги места","He lives above me"));
         wordsList.add(new PrepositionItem("Below", "под, ниже", "Предлоги места","There is a house below the bridge"));

@@ -24,7 +24,7 @@ public class MyCityTheme extends Div implements ComponentFactory {
             "My childhood was spent there and this town will always remain in my heart.";
 
     public MyCityTheme() {
-        add(createHeaderContentBackToThemes("themes"));
+        add(createHeaderContentBackToThemes("themes", topicName));
         VerticalLayout verticalLayout = new VerticalLayout();
         verticalLayout.addAndExpand(createH2Header(topicName));
         verticalLayout.addAndExpand(createImage(imagePath, imageAlt));

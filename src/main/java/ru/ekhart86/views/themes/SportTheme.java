@@ -18,7 +18,7 @@ public class SportTheme extends Div implements ComponentFactory {
             "   As for me I enjoy basketball. Basketball is a dynamic and interesting game. It develops many good qualities such as rapid reaction, will-power and collective spirit.\n" +
             "   I have already realized that sport is desperately necessary for everybody.";
     public SportTheme() {
-        add(createHeaderContentBackToThemes("themes"));
+        add(createHeaderContentBackToThemes("themes", topicName));
         VerticalLayout verticalLayout = new VerticalLayout();
         verticalLayout.addAndExpand(createH2Header(topicName));
         verticalLayout.addAndExpand(createImage(imagePath, imageAlt));

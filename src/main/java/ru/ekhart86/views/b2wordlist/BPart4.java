@@ -10,12 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Route("b2-part-4")
-public class B2 extends Div implements ComponentFactory {
+public class BPart4 extends Div implements ComponentFactory {
 
-    public B2() {
-        add(createHeaderContentBackToThemes("b2-vocabulary"));
+    public BPart4() {
+        add(createHeaderContentBackToThemes("b2-vocabulary", "B2 Часть 4"));
         VerticalLayout verticalLayout = new VerticalLayout();
-        verticalLayout.addAndExpand(createH3Header("B2 Часть 4"));
         List<WordItem> wordsList = new ArrayList<>();
         wordsList.add(new WordItem("alter", "изменять", "[ˈɔːltə]"));
         wordsList.add(new WordItem("alteration", "внесение изменений", "[ˌɔːltəˈreɪʃ(ə)n]"));
@@ -198,14 +197,6 @@ public class B2 extends Div implements ComponentFactory {
         wordsList.add(new WordItem("grin", "ухмыляться, ухмылка, оскал", "[grɪn]"));
         wordsList.add(new WordItem("tremendous", "громадный, страшный", "[trɪˈmɛndəs]"));
         wordsList.add(new WordItem("pad", "подушечка пальца, лапы", "[pæd]"));
-        wordsList.add(new WordItem("aaa", "aaaa", "[aaa]"));
-        wordsList.add(new WordItem("aaa", "aaaa", "[aaa]"));
-        wordsList.add(new WordItem("aaa", "aaaa", "[aaa]"));
-        wordsList.add(new WordItem("aaa", "aaaa", "[aaa]"));
-        wordsList.add(new WordItem("aaa", "aaaa", "[aaa]"));
-        wordsList.add(new WordItem("aaa", "aaaa", "[aaa]"));
-        wordsList.add(new WordItem("aaa", "aaaa", "[aaa]"));
-        wordsList.add(new WordItem("aaa", "aaaa", "[aaa]"));
         verticalLayout.addAndExpand(createWordTable(wordsList));
         add(verticalLayout);
     }

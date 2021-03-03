@@ -9,7 +9,7 @@ import ru.ekhart86.views.util.ComponentFactory;
 public class CommonMistakesTest1 extends Div implements ComponentFactory {
 
     public CommonMistakesTest1() {
-        add(createHeaderContentBackToThemes("tasks"));
+        add(createHeaderContentBackToThemes("tasks", ""));
         VerticalLayout verticalLayout = new VerticalLayout();
         verticalLayout.addAndExpand(createImage("images/commontest1/common-test-1.png", "Page 1"));
         verticalLayout.addAndExpand(createImage("images/commontest1/common-test-2.png", "Page 2"));

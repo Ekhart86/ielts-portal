@@ -11,9 +11,8 @@ import java.util.List;
 public class WritingPartOnePhrase extends Div implements ComponentFactory {
 
     public WritingPartOnePhrase() {
-        add(createHeaderContentBackToThemes("vocabulary"));
+        add(createHeaderContentBackToThemes("vocabulary", "Фразы для Writing Part 1 - Письмо"));
         VerticalLayout verticalLayout = new VerticalLayout();
-        verticalLayout.addAndExpand(createH2Header("Фразы для Writing Part 1 - Письмо"));
         List<PhraseItem> wordsList = new ArrayList<>();
         wordsList.add(new PhraseItem("Furthermore", "Кроме того"));
         wordsList.add(new PhraseItem("Moreover", "Более того"));

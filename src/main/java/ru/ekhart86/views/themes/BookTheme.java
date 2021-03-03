@@ -19,7 +19,7 @@ public class BookTheme extends Div implements ComponentFactory {
             "Now, after reading this book, I involve this knowledge in practice.\n" +
             "This is the only way to remain a valuable employee in the modern world of software development.";
     public BookTheme() {
-        add(createHeaderContentBackToThemes("themes"));
+        add(createHeaderContentBackToThemes("themes", topicName));
         VerticalLayout verticalLayout = new VerticalLayout();
         verticalLayout.addAndExpand(createH2Header(topicName));
         verticalLayout.addAndExpand(createImage(imagePath, imageAlt));

@@ -21,7 +21,7 @@ public class LetterForApple extends Div implements ComponentFactory {
     String bodyEnd = "Respectfully, Roman Morozov";
 
     public LetterForApple() {
-        add(createHeaderContentBackToThemes("themes"));
+        add(createHeaderContentBackToThemes("themes", topicName));
         VerticalLayout verticalLayout = new VerticalLayout();
         verticalLayout.addAndExpand(createH3Header(topicName));
         verticalLayout.addAndExpand(createImage(imagePath, imageAlt));

@@ -11,9 +11,8 @@ import java.util.List;
 @Route("art")
 public class Art extends Div implements ComponentFactory {
     public Art() {
-        add(createHeaderContentBackToThemes("vocabulary"));
+        add(createHeaderContentBackToThemes("vocabulary", "Искусство"));
         VerticalLayout verticalLayout = new VerticalLayout();
-        verticalLayout.addAndExpand(createH2Header("Искусство"));
         List<WordItem> wordsList = new ArrayList<>();
         wordsList.add(new WordItem("To merit an entry fee", "Имеет плату за вход", "[tuː ˈmerɪt æn ˈentrɪ fiː]"));
         wordsList.add(new WordItem("fee", "взнос, платёж", "[fiː]"));

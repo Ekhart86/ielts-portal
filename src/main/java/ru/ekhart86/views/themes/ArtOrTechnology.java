@@ -22,7 +22,7 @@ public class ArtOrTechnology  extends Div implements ComponentFactory {
             "As it seems to me science and art should develop in parallel and they can't exist without each other.";
 
     public ArtOrTechnology() {
-        add(createHeaderContentBackToThemes("themes"));
+        add(createHeaderContentBackToThemes("themes", topicName));
         VerticalLayout verticalLayout = new VerticalLayout();
         verticalLayout.addAndExpand(createH2Header(topicName));
         verticalLayout.addAndExpand(createImage(imagePath, imageAlt));

@@ -12,9 +12,8 @@ import java.util.List;
 public class StartWordForIELTS extends Div implements ComponentFactory {
 
     public StartWordForIELTS() {
-        add(createHeaderContentBackToThemes("vocabulary"));
+        add(createHeaderContentBackToThemes("vocabulary", "Вступительные слова для IELTS"));
         VerticalLayout verticalLayout = new VerticalLayout();
-        verticalLayout.addAndExpand(createH2Header("Вступительные слова для IELTS"));
         List<WordItem> wordsList = new ArrayList<>();
         wordsList.add(new WordItem("To begin with", "Начать с", "[tuː bɪˈgɪn wɪð]"));
         wordsList.add(new WordItem("First of all", "В первую очередь", "[fɜːst ɒv ɔːl]"));

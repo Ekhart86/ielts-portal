@@ -9,7 +9,7 @@ import ru.ekhart86.views.util.ComponentFactory;
 public class PatternForAnswer extends Div implements ComponentFactory {
 
     public PatternForAnswer() {
-        add(createHeaderContentBackToThemes("rules"));
+        add(createHeaderContentBackToThemes("rules", ""));
         VerticalLayout verticalLayout = new VerticalLayout();
         verticalLayout.addAndExpand(createH2Header("Шаблон ответа"));
         verticalLayout.addAndExpand(createBody("Present perfect continuous (I have been verb + ing for ...)"));

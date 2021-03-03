@@ -32,7 +32,8 @@ public class VocabularyView extends Div {
                 new ThemeItem("Идиомы", "Список популярных идиом", 4),
                 new ThemeItem("Искусство", "Список слов об искусстве", 5),
                 new ThemeItem("Предлоги", "Все предлоги в английском языке", 6),
-                new ThemeItem("Фразы для Writing", "Первая часть задания (письмо)", 7));
+                new ThemeItem("Фразы для Writing", "Первая часть задания (письмо)", 7),
+                new ThemeItem("Окружающая среда", "Слова для темы окружающая среда", 8));
         Grid<ThemeItem> grid = new Grid<>();
         Style style = grid.getElement().getStyle();
         style.set("height", "40em");
@@ -83,6 +84,9 @@ public class VocabularyView extends Div {
                 break;
             case 7:
                 UI.getCurrent().navigate(WritingPartOnePhrase.class);
+                break;
+            case 8:
+                UI.getCurrent().navigate(Environment.class);
                 break;
         }
     }

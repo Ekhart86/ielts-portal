@@ -28,7 +28,8 @@ public class B2WordListView extends Div {
         List<ThemeItem> themesList = Arrays.asList(
                 new ThemeItem("Часть 1", "Список слов уровня B2", 1),
                 new ThemeItem("Часть 2", "Список слов уровня B2", 2),
-                new ThemeItem("Часть 3", "Список слов уровня B2", 3));
+                new ThemeItem("Часть 3", "Список слов уровня B2", 3),
+                new ThemeItem("Часть 3", "Список слов уровня B2", 4));
         Grid<ThemeItem> grid = new Grid<>();
         grid.setItems(themesList);
         grid.addColumn(ThemeItem::getTitle).setHeader("Название");
@@ -67,7 +68,7 @@ public class B2WordListView extends Div {
                 UI.getCurrent().navigate(B2PartThree.class);
                 break;
             case 4:
-                UI.getCurrent().navigate(Idioms.class);
+                UI.getCurrent().navigate(BPart4.class);
                 break;
             case 5:
                 UI.getCurrent().navigate(Art.class);

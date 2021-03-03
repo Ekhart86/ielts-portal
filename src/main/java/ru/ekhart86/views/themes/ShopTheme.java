@@ -26,7 +26,7 @@ public class ShopTheme extends Div implements ComponentFactory {
             "I hope that in the future people will become more conscious than they are now.";
 
     public ShopTheme() {
-        add(createHeaderContentBackToThemes("themes"));
+        add(createHeaderContentBackToThemes("themes", topicName));
         VerticalLayout verticalLayout = new VerticalLayout();
         verticalLayout.addAndExpand(createH2Header(topicName));
         verticalLayout.addAndExpand(createImage(imagePath, imageAlt));
