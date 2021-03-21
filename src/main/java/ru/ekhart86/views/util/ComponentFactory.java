@@ -101,7 +101,7 @@ public interface ComponentFactory {
     }
 
     default Component createBody(String text) {
-        H4 body = new H4(text);
+        H5 body = new H5(text);
         Style style = body.getElement().getStyle();
         style.set("margin-top", "3%");
         style.set("margin-left", "20%");
@@ -109,8 +109,30 @@ public interface ComponentFactory {
         return body;
     }
 
+    default Div createLetterDiv() {
+        Div div = new Div();
+        div.getStyle().set("background-color", "#ffecb3");
+        div.getStyle().set("margin-top", "2%");
+        div.getStyle().set("margin-left", "15%");
+        div.getStyle().set("margin-right", "15%");
+        div.getStyle().set("margin-bottom", "2%");
+        div.getStyle().set("border-radius", "1em");
+        return div;
+    }
+
+    default Div createEssayDiv() {
+        Div div = new Div();
+        div.getStyle().set("background-color", "#bbdefb");
+        div.getStyle().set("margin-top", "2%");
+        div.getStyle().set("margin-left", "15%");
+        div.getStyle().set("margin-right", "15%");
+        div.getStyle().set("margin-bottom", "2%");
+        div.getStyle().set("border-radius", "1em");
+        return div;
+    }
+
     default Component createBodyWithColor(String text, String color) {
-        H4 body = new H4(text);
+        H5 body = new H5(text);
         Style style = body.getElement().getStyle();
         style.set("margin-top", "3%");
         style.set("margin-left", "30%");

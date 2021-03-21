@@ -1,9 +1,10 @@
-package ru.ekhart86.views.vocabulary;
+package ru.ekhart86.views.ieltswords;
 
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 import ru.ekhart86.views.util.ComponentFactory;
+import ru.ekhart86.views.vocabulary.WordItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
 public class StartWordForIELTS extends Div implements ComponentFactory {
 
     public StartWordForIELTS() {
-        add(createHeaderContentBackToThemes("vocabulary", "Вступительные слова для IELTS"));
+        add(createHeaderContentBackToThemes("pattern-for-ielts", "Вступительные слова для IELTS"));
         VerticalLayout verticalLayout = new VerticalLayout();
         List<WordItem> wordsList = new ArrayList<>();
         wordsList.add(new WordItem("To begin with", "Начать с", "[tuː bɪˈgɪn wɪð]"));

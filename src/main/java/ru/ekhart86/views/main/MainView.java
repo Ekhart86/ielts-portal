@@ -20,9 +20,12 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.server.PWA;
 import ru.ekhart86.views.b2wordlist.B2WordListView;
+import ru.ekhart86.views.essays.EssaysView;
+import ru.ekhart86.views.ieltswords.PatternForIELTSView;
+import ru.ekhart86.views.letters.LettersView;
 import ru.ekhart86.views.rules.RulesView;
 import ru.ekhart86.views.tasks.TasksView;
-import ru.ekhart86.views.themes.ThemesView;
+import ru.ekhart86.views.topics.ThemesView;
 import ru.ekhart86.views.vocabulary.VocabularyView;
 
 /**
@@ -82,12 +85,15 @@ public class MainView extends AppLayout {
     }
 
     private Component[] createMenuItems() {
-        return new Tab[] {
-            createTab("Темы", ThemesView.class),
-            createTab("Словарь", VocabularyView.class),
-            createTab("Задания", TasksView.class),
-            createTab("Правила", RulesView.class),
-            createTab("B2 Словарь", B2WordListView.class),
+        return new Tab[]{
+                createTab("Эссе", EssaysView.class),
+                createTab("Письма", LettersView.class),
+                createTab("Топики", ThemesView.class),
+                createTab("Правила", RulesView.class),
+                createTab("Задания", TasksView.class),
+                createTab("Шаблоны для IELTS", PatternForIELTSView.class),
+                createTab("Словарь B2", B2WordListView.class),
+                createTab("Словарь по темам", VocabularyView.class),
         };
     }
 

@@ -1,4 +1,4 @@
-package ru.ekhart86.views.themes;
+package ru.ekhart86.views.topics;
 
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.router.Route;

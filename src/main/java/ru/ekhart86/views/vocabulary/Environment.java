@@ -1,12 +1,12 @@
 package ru.ekhart86.views.vocabulary;
 
-        import com.vaadin.flow.component.html.Div;
-        import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-        import com.vaadin.flow.router.Route;
-        import ru.ekhart86.views.util.ComponentFactory;
+import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.Route;
+import ru.ekhart86.views.util.ComponentFactory;
 
-        import java.util.ArrayList;
-        import java.util.List;
+import java.util.ArrayList;
+import java.util.List;
 
 @Route("environment")
 public class Environment extends Div implements ComponentFactory {

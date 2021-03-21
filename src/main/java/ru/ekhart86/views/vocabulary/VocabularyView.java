@@ -10,14 +10,16 @@ import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.dom.Style;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+import ru.ekhart86.views.ieltswords.StartWordForIELTS;
+import ru.ekhart86.views.ieltswords.WritingPartOnePhrase;
 import ru.ekhart86.views.main.MainView;
-import ru.ekhart86.views.themes.ThemeItem;
+import ru.ekhart86.views.topics.ThemeItem;
 
 import java.util.Arrays;
 import java.util.List;
 
 @Route(value = "vocabulary", layout = MainView.class)
-@PageTitle("Словарь")
+@PageTitle("Слова по темам")
 @CssImport("./styles/views/vocabulary/vocabulary-view.css")
 public class VocabularyView extends Div {
 
@@ -26,14 +28,12 @@ public class VocabularyView extends Div {
     public VocabularyView() {
         setId("vocabulary-view");
         List<ThemeItem> themesList = Arrays.asList(
-                new ThemeItem("Вступительные слова для IELTS", "Слова используемые в начале предложений", 1),
-                new ThemeItem("Прилагательные", "Список самых популярных прилагательных", 2),
-                new ThemeItem("Фразовые глаголы", "Список самых популярных фразовых глаголов", 3),
-                new ThemeItem("Идиомы", "Список популярных идиом", 4),
-                new ThemeItem("Искусство", "Список слов об искусстве", 5),
-                new ThemeItem("Предлоги", "Все предлоги в английском языке", 6),
-                new ThemeItem("Фразы для Writing", "Первая часть задания (письмо)", 7),
-                new ThemeItem("Окружающая среда", "Слова для темы окружающая среда", 8));
+                new ThemeItem("Прилагательные", "Список самых популярных прилагательных", 1),
+                new ThemeItem("Фразовые глаголы", "Список самых популярных фразовых глаголов", 2),
+                new ThemeItem("Идиомы", "Список популярных идиом", 3),
+                new ThemeItem("Искусство", "Список слов об искусстве", 4),
+                new ThemeItem("Предлоги", "Все предлоги в английском языке", 5),
+                new ThemeItem("Окружающая среда", "Слова для темы окружающая среда", 6));
         Grid<ThemeItem> grid = new Grid<>();
         Style style = grid.getElement().getStyle();
         style.set("height", "40em");
@@ -65,27 +65,21 @@ public class VocabularyView extends Div {
     private void openSelectedTheme(int id) {
         switch (id) {
             case 1:
-                UI.getCurrent().navigate(StartWordForIELTS.class);
-                break;
-            case 2:
                 UI.getCurrent().navigate(Adjective.class);
                 break;
-            case 3:
+            case 2:
                 UI.getCurrent().navigate(PhrasalVerbs.class);
                 break;
-            case 4:
+            case 3:
                 UI.getCurrent().navigate(Idioms.class);
                 break;
-            case 5:
+            case 4:
                 UI.getCurrent().navigate(Art.class);
                 break;
-            case 6:
+            case 5:
                 UI.getCurrent().navigate(Prepositions.class);
                 break;
-            case 7:
-                UI.getCurrent().navigate(WritingPartOnePhrase.class);
-                break;
-            case 8:
+            case 6:
                 UI.getCurrent().navigate(Environment.class);
                 break;
         }

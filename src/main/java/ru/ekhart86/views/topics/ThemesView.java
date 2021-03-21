@@ -1,4 +1,4 @@
-package ru.ekhart86.views.themes;
+package ru.ekhart86.views.topics;
 
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
@@ -11,6 +11,7 @@ import com.vaadin.flow.dom.Style;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
+import ru.ekhart86.views.essays.OnionEssayTheme;
 import ru.ekhart86.views.main.MainView;
 
 import java.util.Arrays;
@@ -19,7 +20,7 @@ import java.util.List;
 @Route(value = "themes", layout = MainView.class)
 @PageTitle("Темы")
 @CssImport("./styles/views/themes/themes-view.css")
-@RouteAlias(value = "", layout = MainView.class)
+@RouteAlias(value = "themes", layout = MainView.class)
 public class ThemesView extends Div {
 
     public ThemesView() {
@@ -33,12 +34,8 @@ public class ThemesView extends Div {
                 new ThemeItem("Шопинг", "Монолог на тему шопинга", 6),
                 new ThemeItem("Русский музей", "Рассказ о русском музее", 7),
                 new ThemeItem("Спорт", "Моё отношение к спорту", 8),
-                new ThemeItem("Письмо другу", "Письмо другу о продаже мебели", 9),
-                new ThemeItem("Луковое эссе", "Эссе о плюсах и минусах лука", 10),
-                new ThemeItem("Солнечная система", "Рассказ о солнечной системе", 11),
-                new ThemeItem("Письмо в Apple", "Письмо о вакансии в Apple", 12),
-                new ThemeItem("Письмо жалоба", "Письмо о потеряном чемодане", 13),
-                new ThemeItem("Письмо в кадровое агенство", "Вакансия водитель грузовика", 14));
+                new ThemeItem("Луковое эссе", "Эссе о плюсах и минусах лука", 9),
+                new ThemeItem("Солнечная система", "Рассказ о солнечной системе", 10));
         Grid<ThemeItem> grid = new Grid<>();
         Style style = grid.getElement().getStyle();
         style.set("height", "40em");
@@ -93,22 +90,10 @@ public class ThemesView extends Div {
                 UI.getCurrent().navigate(SportTheme.class);
                 break;
             case 9:
-                UI.getCurrent().navigate(LetterAboutFurniture.class);
-                break;
-            case 10:
                 UI.getCurrent().navigate(OnionEssayTheme.class);
                 break;
-            case 11:
+            case 10:
                 UI.getCurrent().navigate(SolarSystemTheme.class);
-                break;
-            case 12:
-                UI.getCurrent().navigate(LetterForApple.class);
-                break;
-            case 13:
-                UI.getCurrent().navigate(LetterOfComplaint.class);
-                break;
-            case 14:
-                UI.getCurrent().navigate(TruckDriverLetter.class);
                 break;
         }
     }

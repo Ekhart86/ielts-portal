@@ -10,8 +10,6 @@ import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import ru.ekhart86.views.main.MainView;
-import ru.ekhart86.views.themes.ShopTheme;
-import ru.ekhart86.views.themes.VacationTheme;
 
 import java.util.Arrays;
 import java.util.List;

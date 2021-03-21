@@ -1,4 +1,4 @@
-package ru.ekhart86.views.themes;
+package ru.ekhart86.views.essays;
 
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -7,8 +7,6 @@ import ru.ekhart86.views.util.ComponentFactory;
 
 @Route("onion")
 public class OnionEssayTheme extends Div implements ComponentFactory {
-    String imagePath = "images/onion.jpg";
-    String imageAlt = "Фото лука";
     String topicName = "Onion essay";
     String bodyHeader = "Nowadays, onions are an important part of most dishes in the world. " +
             "But is it really that good? Let's look at this issue.\n";
@@ -29,14 +27,14 @@ public class OnionEssayTheme extends Div implements ComponentFactory {
             "I tend to think that onions continue to be a favorite vegetable for millions of people around the world.";
 
     public OnionEssayTheme() {
-        add(createHeaderContentBackToThemes("themes", topicName));
+        add(createHeaderContentBackToThemes("essays", topicName));
         VerticalLayout verticalLayout = new VerticalLayout();
-        verticalLayout.addAndExpand(createH3Header(topicName));
-        verticalLayout.addAndExpand(createImage(imagePath, imageAlt));
         verticalLayout.addAndExpand(createBody(bodyHeader));
         verticalLayout.addAndExpand(createBody(bodyOne));
         verticalLayout.addAndExpand(createBody(bodyTwo));
         verticalLayout.addAndExpand(createBody(bodyThree));
-        add(verticalLayout);
+        Div div = createEssayDiv();
+        div.add(verticalLayout);
+        add(div);
     }
 }

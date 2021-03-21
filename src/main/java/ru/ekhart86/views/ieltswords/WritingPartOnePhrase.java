@@ -1,9 +1,10 @@
-package ru.ekhart86.views.vocabulary;
+package ru.ekhart86.views.ieltswords;
 
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 import ru.ekhart86.views.util.ComponentFactory;
+import ru.ekhart86.views.vocabulary.PhraseItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
 public class WritingPartOnePhrase extends Div implements ComponentFactory {
 
     public WritingPartOnePhrase() {
-        add(createHeaderContentBackToThemes("vocabulary", "Фразы для Writing Part 1 - Письмо"));
+        add(createHeaderContentBackToThemes("pattern-for-ielts", "Фразы для Writing Part 1 - Письмо"));
         VerticalLayout verticalLayout = new VerticalLayout();
         List<PhraseItem> wordsList = new ArrayList<>();
         wordsList.add(new PhraseItem("Furthermore", "Кроме того"));

@@ -1,4 +1,4 @@
-package ru.ekhart86.views.themes;
+package ru.ekhart86.views.topics;
 
 public class ThemeItem {
 

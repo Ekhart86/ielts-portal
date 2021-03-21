@@ -1,4 +1,4 @@
-package ru.ekhart86.views.b2wordlist;
+package ru.ekhart86.views.letters;
 
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
@@ -7,34 +7,33 @@ import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.dom.Style;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.router.RouteAlias;
 import ru.ekhart86.views.main.MainView;
-import ru.ekhart86.views.topics.ThemeItem;
-import ru.ekhart86.views.vocabulary.*;
+import ru.ekhart86.views.topics.*;
 
 import java.util.Arrays;
 import java.util.List;
 
-@Route(value = "b2-vocabulary", layout = MainView.class)
-@PageTitle("B2 Словарь")
-@CssImport("./styles/views/vocabulary/vocabulary-view.css")
-public class B2WordListView extends Div {
-
-    int selectedThemeId;
-
-    public B2WordListView() {
-        setId("b2-part-1-view");
+@Route(value = "letters", layout = MainView.class)
+@PageTitle("Письма")
+@CssImport("./styles/views/themes/themes-view.css")
+@RouteAlias(value = "", layout = MainView.class)
+public class LettersView extends Div {
+    public LettersView() {
+        setId("letters-view");
         List<ThemeItem> themesList = Arrays.asList(
-                new ThemeItem("Часть 1", "Список слов уровня B2", 1),
-                new ThemeItem("Часть 2", "Список слов уровня B2", 2),
-                new ThemeItem("Часть 3", "Список слов уровня B2", 3),
-                new ThemeItem("Часть 3", "Список слов уровня B2", 4));
+                new ThemeItem("Формальные письма", "Formal letter", 1),
+                new ThemeItem("Неформальные письма", "Informal letter", 2),
+                new ThemeItem("Полуформальные письма", "Semi-formal letter", 3));
         Grid<ThemeItem> grid = new Grid<>();
+        Style style = grid.getElement().getStyle();
+        style.set("height", "40em");
         grid.setItems(themesList);
         grid.addColumn(ThemeItem::getTitle).setHeader("Название");
-        grid.addColumn(ThemeItem::getSubTitle)
-                .setHeader("Описание");
+        grid.addColumn(ThemeItem::getSubTitle).setHeader("Описание");
         grid.addComponentColumn(
                 item -> {
                     Button openButton = new Button();
@@ -59,21 +58,14 @@ public class B2WordListView extends Div {
     private void openSelectedTheme(int id) {
         switch (id) {
             case 1:
-                UI.getCurrent().navigate(B2PartOne.class);
+                UI.getCurrent().navigate(FormalLetters.class);
                 break;
             case 2:
-                UI.getCurrent().navigate(B2PartTwo.class);
+                UI.getCurrent().navigate(InformalLetters.class);
                 break;
             case 3:
-                UI.getCurrent().navigate(B2PartThree.class);
-                break;
-            case 4:
-                UI.getCurrent().navigate(BPart4.class);
-                break;
-            case 5:
-                UI.getCurrent().navigate(Art.class);
+                UI.getCurrent().navigate(SemiFormalLetters.class);
                 break;
         }
     }
-
 }
