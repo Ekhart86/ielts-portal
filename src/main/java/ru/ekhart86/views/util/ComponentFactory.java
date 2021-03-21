@@ -96,6 +96,8 @@ public interface ComponentFactory {
         centeredLayout.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
         centeredLayout.setAlignItems(FlexComponent.Alignment.CENTER);
         Image image = new Image(path, alt);
+        image.setMaxHeight("1280px");
+        image.setMaxWidth("1024px");
         centeredLayout.add(image);
         return centeredLayout;
     }
@@ -139,6 +141,31 @@ public interface ComponentFactory {
         style.set("margin-right", "30%");
         style.set("color", color);
         return body;
+    }
+
+    default Div createPatternDiv() {
+        Div div = new Div();
+        div.getStyle().set("background-color", "#b7deb8");
+        div.getStyle().set("margin-top", "2%");
+        div.getStyle().set("margin-left", "15%");
+        div.getStyle().set("margin-right", "15%");
+        div.getStyle().set("margin-bottom", "2%");
+        div.getStyle().set("border-radius", "1em");
+        return div;
+    }
+
+    default Component createPreText(String text) {
+        FlexLayout centeredLayout = new FlexLayout();
+        centeredLayout.setSizeFull();
+        centeredLayout.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
+        centeredLayout.setAlignItems(FlexComponent.Alignment.CENTER);
+        Div div = createPatternDiv();
+        Pre pre = new Pre();
+        pre.getStyle().set("background-color","#b7deb8");
+        pre.add(text);
+        centeredLayout.add(pre);
+        div.add(centeredLayout);
+        return div;
     }
 
     default Component createWordTable(List<WordItem> list) {
