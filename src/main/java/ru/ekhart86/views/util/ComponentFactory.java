@@ -155,16 +155,13 @@ public interface ComponentFactory {
     }
 
     default Component createPreText(String text) {
-        FlexLayout centeredLayout = new FlexLayout();
-        centeredLayout.setSizeFull();
-        centeredLayout.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
-        centeredLayout.setAlignItems(FlexComponent.Alignment.CENTER);
         Div div = createPatternDiv();
         Pre pre = new Pre();
         pre.getStyle().set("background-color","#b7deb8");
+        pre.getStyle().set("margin-left", "10%");
+        pre.getStyle().set("margin-right", "10%");
         pre.add(text);
-        centeredLayout.add(pre);
-        div.add(centeredLayout);
+        div.add(pre);
         return div;
     }
 
